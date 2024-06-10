@@ -10,8 +10,12 @@ import java.util.Optional;
 
 @Service
 public class SuperHeroesServiceImpl implements SuperHeroesService {
+    private final SuperHeroesRepository superHeroesRepository;
+
     @Autowired
-    SuperHeroesRepository superHeroesRepository;
+    public SuperHeroesServiceImpl(SuperHeroesRepository superHeroesRepository) {
+        this.superHeroesRepository = superHeroesRepository;
+    }
     @Override
     public List<SuperHeroes> findAllSuperHeroes() {
         return superHeroesRepository.findAll();

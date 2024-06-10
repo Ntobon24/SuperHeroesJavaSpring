@@ -12,8 +12,12 @@ import java.util.Optional;
 
 @Service
 public class PowerServiceImpl implements PowerService {
+    private final PowerRepository powerRepository;
+
     @Autowired
-    PowerRepository powerRepository;
+    public PowerServiceImpl(PowerRepository powerRepository) {
+        this.powerRepository = powerRepository;
+    }
     @Override
     public List<Power> findAllPower() {
         return powerRepository.findAll();
