@@ -36,6 +36,9 @@ dependencies {
 	testImplementation 'org.mockito:mockito-junit-jupiter:3.12.4'
 	implementation 'org.springframework:spring-context:6.1.6'
 
+	springBoot {
+		mainClass = 'udem.edu.co.superheroes.SuperheroesApplication'
+	}
 
 }
 
